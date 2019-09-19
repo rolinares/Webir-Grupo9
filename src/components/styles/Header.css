@@ -1,0 +1,34 @@
+.backgroundColor {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(252,253,253,1) 51%, rgba(234,242,243,1) 100%, rgba(221,234,236,1) 100%);
+    display: flex;
+}
+
+.icono {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containerIcono {
+    width: 15%;
+}
+
+.containerText {
+    width: 85%
+}
+
+.separador {
+    overflow: hidden;
+    height: 20px;
+}
+
+.separador:after {
+    content: '';
+    display: block;
+    width: 90%;
+    height: 30px;
+	margin: -30px auto 0;
+    border-radius: 120px / 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+}
