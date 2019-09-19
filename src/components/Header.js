@@ -15,7 +15,7 @@ class Header extends React.Component {
                         <p>Informate con que moneda viajar para que te convenga más!</p>
                     </div>
                 </div>
-                <div class="separador"></div>
+                <div className="separador"></div>
             </div>
         )
     }
