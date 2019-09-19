@@ -33,7 +33,7 @@ class LineChart extends React.Component {
   render() {
     return (
       <div className="ChartSize">
-        {/* <h2>Line Example</h2> */}
+        <h2>Line Example</h2>
         <Line data={data} />
       </div>
     );
