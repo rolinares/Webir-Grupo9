@@ -8,14 +8,23 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles(theme => ({
     button: {
-      margin: theme.spacing(1),
+      margin: theme.spacing(2),
     },
     rightIcon: {
       marginLeft: theme.spacing(1),
     },
+    paper: {
+      padding: theme.spacing(2),
+      margin: 'auto',
+      maxWidth: 700,
+    },
+    margin: {
+      marginTop: '20px'
+    }
   }));
 
 export default function MaterialUIPickers() {
@@ -27,26 +36,36 @@ export default function MaterialUIPickers() {
     }
     const classes = useStyles();
     return (
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <Grid container justify="center" >
-                <KeyboardDatePicker
-                    disableToolbar
-                    variant="inline"
-                    format="dd/MM/yyyy"
-                    margin="normal"
-                    id="date-picker-inline"
-                    label="Fecha de cotización"
-                    value={selectedDate}
-                    onChange={handleDateChange}
-                    KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                    }}
-                />
-                <Button variant="contained" color="primary" className={classes.button}>
-                    Buscar Cotización
-                    <Search className={classes.rightIcon} />
-                </Button>
+        
+            <Grid container className={classes.margin} direction="row" justify="center" alignItems="center" >
+              <Paper className={classes.paper}>
+                <Grid container spacing={10}>
+                  <Grid item>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                      <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="dd/MM/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        label="Fecha de cotización"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                        }}
+                      />
+                    </MuiPickersUtilsProvider>
+                  </Grid>
+                  <Grid item direction="row" justify="center" alignItems="flex-end">
+                    <Button variant="contained" color="primary" className={classes.button}>
+                      Buscar Cotización
+                      <Search className={classes.rightIcon} />
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Paper>
             </Grid>
-        </MuiPickersUtilsProvider>
+        
     );
   }
