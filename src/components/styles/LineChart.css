@@ -2,3 +2,15 @@
     height: 500px;
     width: 500px;
 }
+
+.paper {
+    padding: 20px;
+    margin: auto;
+    /* max-width: 700px; */
+    height: 600px;
+    width: 1000px;
+  }
+
+.margin {
+    margin-top: 20px
+}

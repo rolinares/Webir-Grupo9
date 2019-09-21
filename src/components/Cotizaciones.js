@@ -9,12 +9,22 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   paper: {
-    height: 300,
+    height: 270,
     width: 500,
   },
   control: {
     padding: theme.spacing(2),
   },
+  updated: {
+    float: 'right',
+    padding: 20
+  },
+  valor: {
+    textAlign: 'center'
+  },
+  titulo: {
+    padding: 20
+  }
 }));
 
 export default function SpacingGrid() {
@@ -27,21 +37,27 @@ export default function SpacingGrid() {
         <Grid container justify="center" spacing={3}>
             <Grid item>
                 <Paper className={classes.paper} >
-                    <Typography variant="caption" color="textSecondary" gutterBottom>
-                        Actualizado al 20/09/2019 15:00 hs.
-                    </Typography>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography className={classes.titulo} variant="h6" gutterBottom>
                         Cotización USD - UY
+                    </Typography>
+                    <Typography className={classes.valor} variant="h1" component="h2" gutterBottom>
+                      $ 36.75
+                    </Typography>
+                    <Typography className={classes.updated} variant="caption" color="textSecondary" gutterBottom>
+                        Actualizado al 20/09/2019 15:00 hs.
                     </Typography>
                 </Paper>
             </Grid>
             <Grid item>
                 <Paper className={classes.paper} >
-                    <Typography variant="caption" color="textSecondary" gutterBottom>
-                        Actualizado al 20/09/2019 15:00 hs.
-                    </Typography>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography className={classes.titulo} variant="h6" gutterBottom>
                         Cotización USD - AR
+                    </Typography>
+                    <Typography className={classes.valor} variant="h1" component="h2" gutterBottom>
+                      $ 56.69
+                    </Typography>
+                    <Typography className={classes.updated} variant="caption" color="textSecondary" gutterBottom>
+                        Actualizado al 20/09/2019 15:00 hs.
                     </Typography>
                 </Paper>
             </Grid>

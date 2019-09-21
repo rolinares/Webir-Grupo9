@@ -1,12 +1,14 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 import './styles/LineChart.css'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['15/09/2019', '16/09/2019', '17/09/2019', '18/09/2019', '19/09/2019', '20/09/2019', '21/09/2019'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Cotización',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(75,192,192,0.4)',
@@ -24,7 +26,7 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [56.03, 56.27, 56.48, 56.44, 56.48, 56.69, 56.69]
     }
   ]
 };
@@ -32,10 +34,17 @@ const data = {
 class LineChart extends React.Component {
   render() {
     return (
-      <div className="ChartSize">
-        <h2>Line Example</h2>
-        <Line data={data} />
-      </div>
+      <Grid container className="margin" direction="row" justify="center" alignItems="center" >
+        <Paper className="paper">
+          <Grid item className="margin" direction="column" justify="center" alignItems="center" >
+            <Line data={data} />
+          </Grid>
+        </Paper>
+      </Grid>
+      // <div className="ChartSize">
+      //   <h2>Line Example</h2>
+      //   <Line data={data} />
+      // </div>
     );
   }
 };
