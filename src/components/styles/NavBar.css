@@ -1,0 +1,41 @@
+.icono {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerIcono {
+  width: 15%;
+}
+
+.containerText {
+  width: 85%;
+}
+
+.separador {
+  overflow: hidden;
+  height: 20px;
+}
+
+.separador:after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 30px;
+  margin: -30px auto 0;
+  border-radius: 120px / 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
+.root {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-right: 85px;
+  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica,
+    Roboto, Arial, sans-serif;
+}
+.title {
+  flex-grow: 1;
+}

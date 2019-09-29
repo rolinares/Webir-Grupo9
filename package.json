@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/date-fns": "latest",
+    "@material-ui/core": "^4.4.3",
+    "@material-ui/icons": "latest",
+    "@material-ui/pickers": "latest",
     "@types/date-fns": "^2.6.0",
     "chart.js": "^2.8.0",
-    "react-chartjs-2": "^2.7.6",
-    "react-scripts": "3.1.1",
-    "typeface-roboto": "0.0.75",
-    "react-dom": "latest",
-    "react": "latest",
     "date-fns": "next",
-    "@material-ui/pickers": "latest",
-    "@material-ui/core": "latest",
-    "@material-ui/icons": "latest",
-    "@date-io/date-fns": "latest"
+    "react": "latest",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "latest",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "3.1.1",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",

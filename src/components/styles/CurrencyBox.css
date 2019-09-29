@@ -1,0 +1,48 @@
+.root {
+  flex-grow: 1;
+}
+
+.paperImp {
+  height: 250px;
+  width: 405px;
+  background-image: url("../../images/URUFlagmd.png") no-repeat;
+}
+
+.control {
+  padding: spacing(2);
+}
+.updated {
+  float: right;
+  padding: 20px;
+}
+.valor {
+  text-align: center;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3.75em;
+  margin: 8px;
+}
+.titulo {
+  padding: 20px;
+}
+
+.icono {
+  height: 85px;
+  width: 85px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backgroundColor {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    #edeff1 0%,
+    rgba(255, 255, 255, 1) 0%,
+    #ffffff 51%,
+    #9ecbf1 100%,
+    rgb(236, 221, 221) 90%
+  );
+  display: flex;
+}
