@@ -14,7 +14,7 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <div>
-            <img className="icono" src={icono} />
+            <img className="icono" src={icono} alt="inicio"/>
           </div>
           <Typography variant="h6" className="title">
             News

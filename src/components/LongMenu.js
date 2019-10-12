@@ -4,7 +4,9 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-const options = ["Principal", "Cotizaciones", "Pyxis"];
+import {NavLink} from  "react-router-dom";
+
+//const options = ["Principal", "Cotizaciones"];
 
 const ITEM_HEIGHT = 48;
 
@@ -19,7 +21,8 @@ export default function LongMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
+  
   return (
     <div>
       <IconButton
@@ -43,15 +46,12 @@ export default function LongMenu() {
           }
         }}
       >
-        {options.map(option => (
-          <MenuItem
-            key={option}
-            selected={option === "Pyxis"}
-            onClick={handleClose}
-          >
-            {option}
-          </MenuItem>
-        ))}
+        <MenuItem onTouchTap={() => {this.handleClose() }} >
+              <NavLink to="/Principal"> Principal </NavLink>
+         </MenuItem>
+        <MenuItem onTouchTap={() => {this.handleClose() }} >
+              <NavLink to="/historic"> Historico </NavLink>
+        </MenuItem>
       </Menu>
     </div>
   );

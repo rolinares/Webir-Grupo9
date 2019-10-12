@@ -14,8 +14,8 @@ class currencyBox extends Component {
             {this.props.title}
           </Typography>
           <div className="backgroundColor">
-            <img className="icono" src={this.props.img1} />
-            <img className="icono" src={this.props.img2} />
+            <img className="icono" src={this.props.img1} alt={this.props.title}/>
+            <img className="icono" src={this.props.img2} alt={this.props.title} />
           </div>
           <h1 className="valor">{this.props.cot}</h1>
         </Paper>

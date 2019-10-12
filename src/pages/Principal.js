@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
 import SearchPanel from "../components/SearchPanel";
 import Boxes from "../components/Boxes";
 import LineChart from "../components/LineChart";
