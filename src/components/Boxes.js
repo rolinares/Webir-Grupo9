@@ -42,7 +42,7 @@ class boxes extends Component {
     .then((recurso) => {
         console.log(recurso)
         sal = recurso
-        this.setState({cotizaciones[0].cot: sal.value });
+        this.setState({this.state.cotizaciones[0].cot: sal.value });
         console.log(jsonStr);
     })   
     //console.log(sal[0])        
