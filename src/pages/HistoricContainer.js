@@ -16,7 +16,7 @@ class Historic extends Component {
     }
     fetchCotization = async () => {                
         let sal
-        let response = await fetch('https://localhost:5001/api/Quotations',{            
+        let response = await fetch('https://localhost:5001/api/Quotations/DolarUy',{            
         }).then((response) => {           
             return response.json()
         })
@@ -25,7 +25,7 @@ class Historic extends Component {
              sal = recurso
         })      
         console.log(sal[0])        
-        console.log("Valor: "+ sal[0].value)        
+        // console.log("Valor: "+ sal[0].value)        
     }
     render() { 
         return ( 
