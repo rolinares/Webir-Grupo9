@@ -3,10 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import Button from '@material-ui/core/Button';
 import Search from '@material-ui/icons/Search';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import {MuiPickersUtilsProvider,KeyboardDatePicker} from '@material-ui/pickers';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
@@ -57,7 +54,11 @@ export default function MaterialUIPickers() {
               </MuiPickersUtilsProvider>
             </Grid>
             <Grid item direction="row" justify="center" alignItems="flex-end">
-              <Button variant="contained" color="primary" className={classes.button}>
+              <Button 
+                  variant="contained" 
+                  color="primary" 
+                  className={classes.button}
+                  onClick={this.changeInfo}>
                 Buscar Cotización
                 <Search className={classes.rightIcon} />
               </Button>

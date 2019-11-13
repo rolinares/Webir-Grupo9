@@ -10,6 +10,7 @@ import "./styles/Boxes.css";
 class boxes extends Component {
   constructor(props) {
     super(props);
+    //this.handleChange = this.handleChange.bind(this);
     this.state = {
       cotizaciones: [
         {
@@ -17,14 +18,14 @@ class boxes extends Component {
           title: "Cotización Dólar USA - Peso Argentino",
           img1: USAFlag,
           img2: ARGFlag,
-          cot: 60.56
+          cot: 0
         },
         {
           id: 2,
           title: "Cotización Dólar USA - Peso Uruguayo",
           img1: USAFlag,
           img2: URUFlag,
-          cot: 37.65
+          cot: 0
         }
       ]
     };
@@ -35,23 +36,28 @@ class boxes extends Component {
 
   fetchCotization = async () => {
     let sal
-    let response = await fetch('https://localhost:5001/api/Quotations/DolarUy',{            
-    }).then((response) => {           
+    let response = await fetch('https://localhost:5001/api/Quotations',{            
+    }).then((response) => {         
         return response.json()
     })
     .then((recurso) => {
-        console.log(recurso)
+        console.log(recurso[0].value)
         sal = recurso
-        this.setState({this.state.cotizaciones[0].cot: sal.value });
-        console.log(jsonStr);
-    })   
-    //console.log(sal[0])        
+        console.log(recurso)
+        var cotAux = this.state.cotizaciones;
+        cotAux[1].cot = recurso[2].value;
+        cotAux[0].cot = recurso[0].value;
+        this.setState({cotizaciones: cotAux});
+       
+    })
     
-    console.log("Fecha: "+sal.date)
-    console.log("Cotización: "+sal.value)
-    console.log("Id Ref: "+sal.id)
         
   }
+
+  //handleChange(e) {
+   // this.setState({cotizaciones: e.target.value});
+ // }
+
 
   render() {
     return (
