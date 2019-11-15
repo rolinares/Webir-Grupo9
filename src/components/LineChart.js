@@ -8,7 +8,12 @@ import Paper from '@material-ui/core/Paper';
 
 class LineChart extends React.Component {
   render(){
-  const cot = this.props.cots
+  const cot = this.props.cots  
+  var sal= new Array()
+  for (var i = 0; i < cot.length; i++)
+  {
+    sal[i] = cot[i]
+  }  
   const data = {
     labels: this.props.labels,
     datasets: [
@@ -31,7 +36,7 @@ class LineChart extends React.Component {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: cot
+        data: sal
       }
     ]
   };

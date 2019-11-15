@@ -17,7 +17,7 @@ export default function ButtonAppBar() {
             <img className="icono" src={icono} alt="inicio"/>
           </div>
           <Typography variant="h6" className="title">
-            News
+            ViajAR
           </Typography>
           <h4 className="menuButton">
             Informate con que moneda viajar para que te convenga más!

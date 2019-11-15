@@ -10,8 +10,13 @@
     padding: 20px;
     margin: auto;
     max-width: 700px;
+    height: auto !important;
 }
 
 .margin {
     margin-top: 20px;
+}
+
+.height{
+    height: auto;
 }

@@ -6,32 +6,46 @@ class Historic extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            cots: [40, 49.27, 56.48, 56.44, 56.48, 56.69, 56.69],
-            labels: ['15/09/2019', '16/09/2019', '17/09/2019', '18/09/2019', '19/09/2019', '20/09/2019', '21/09/2019'],
-         }
-         console.log(this.state)
+            cots: [],
+            labels: []
+         }         
     }
-    async componentDidMount(){
+    async componentDidMount(){               
         await this.fetchCotization()
     }
     fetchCotization = async () => {                
-        let sal
-        let response = await fetch('https://localhost:5001/api/Quotations/DolarUy',{            
+        let newDate = new Date()
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+        let initDate = '01-'+month + '-'+year 
+        let endDate = date+'-'+month + '-'+year        
+        let url = 'https://localhost:5001/api/Quotations/range?codes=DolarArg&startTime='+initDate+'&endTime='+endDate
+        let response = await fetch(url,{            
         }).then((response) => {           
             return response.json()
         })
-        .then((recurso) => {
-            console.log(recurso)
-             sal = recurso
+        .then((recurso) => {            
+            var labelsAux = this.state.labels
+            var cotsAux = this.state.cots
+            var a
+            { recurso[0].map((item) => (
+                a = new Date(item.date),
+                labelsAux.push(a.getDate()+'-'+a.getMonth()+'-'+a.getFullYear()),
+                cotsAux.push(item.value)
+            ))}
+            this.setState({
+                labels: labelsAux,
+                cots: cotsAux
+            })              
         })      
-        console.log(sal[0])        
-        // console.log("Valor: "+ sal[0].value)        
+        
     }
     render() { 
         return ( 
            
             <React.Fragment>                
-                <NavBar />                                
+                <NavBar />                                            
                 <LineChart cots={this.state.cots} labels={this.state.labels}/>
             </React.Fragment>
          );
@@ -39,20 +53,3 @@ class Historic extends Component {
 }
  
 export default Historic;
-
-/* Object recibido
-{
-Id:
-Coin:
-Value:
-Date:
-}
-
-Coin:
-{
-id
-code
-CountryBank
-RefCode
-}
-*/

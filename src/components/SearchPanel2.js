@@ -16,6 +16,7 @@ class SearchPanel2 extends Component {
         this.state = { 
             name: '',
             
+            
          }
          this.changeInfo = this.changeInfo.bind(this);
     }
@@ -46,11 +47,12 @@ class SearchPanel2 extends Component {
     render() { 
         // const [selectedDate, setSelectedDate] = React.useState(new Date('2019-09-19T21:11:54'));
         // const classes = useStyles();
+        
         // function handleDateChange(date) {
         //     setSelectedDate(date);
         //   }
         return (
-              <div>
+              <div className="height">
                 {/* <Button 
                     variant="contained" 
                     color="primary" 
@@ -61,7 +63,7 @@ class SearchPanel2 extends Component {
                 </Button> */}
                  <Grid container className="margin" direction="row" justify="center" alignItems="center" >
                     <Paper className="paper">
-                    <Grid container spacing={10}>
+                    <Grid style={{display: "flex", justifyContent: "center", alignItems: "center"}} container spacing={10}>
                         <Grid item>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                             <KeyboardDatePicker
@@ -71,7 +73,7 @@ class SearchPanel2 extends Component {
                             margin="normal"
                             id="date-picker-inline"
                             label="Fecha de cotización"
-                            //value={selectedDate}
+                           // value={selectedDate}
                             //onChange={handleDateChange}
                             KeyboardButtonProps={{
                             'aria-label': 'change date',
@@ -85,7 +87,7 @@ class SearchPanel2 extends Component {
                             color="primary" 
                             className="button"
                             onClick={this.changeInfo}>
-                            Buscar Cotización
+                            Consultar
                             <Search className="rightIcon" />
                         </Button>
                         </Grid>

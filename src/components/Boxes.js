@@ -5,12 +5,10 @@ import ARGFlag from "../images/ARGFlag.png";
 import URUFlag from "../images/URUFlag.png";
 import USAFlag from "../images/USAFlag.png";
 import "./styles/Boxes.css";
-// import Typography from "@material-ui/core/Typography";
 
 class boxes extends Component {
   constructor(props) {
-    super(props);
-    //this.handleChange = this.handleChange.bind(this);
+    super(props);    
     this.state = {
       cotizaciones: [
         {
@@ -35,15 +33,12 @@ class boxes extends Component {
   }
 
   fetchCotization = async () => {
-    let sal
+    
     let response = await fetch('https://localhost:5001/api/Quotations',{            
     }).then((response) => {         
         return response.json()
     })
-    .then((recurso) => {
-        console.log(recurso[0].value)
-        sal = recurso
-        console.log(recurso)
+    .then((recurso) => {      
         var cotAux = this.state.cotizaciones;
         cotAux[1].cot = recurso[2].value;
         cotAux[0].cot = recurso[0].value;
@@ -54,11 +49,6 @@ class boxes extends Component {
         
   }
 
-  //handleChange(e) {
-   // this.setState({cotizaciones: e.target.value});
- // }
-
-
   render() {
     return (
       <Grid container className="root">
@@ -67,6 +57,7 @@ class boxes extends Component {
             {this.state.cotizaciones.map(item => {
               return (
                 <CurrencyBox
+                  key={item.id}
                   id={item.id}
                   title={item.title}
                   img1={item.img1}
