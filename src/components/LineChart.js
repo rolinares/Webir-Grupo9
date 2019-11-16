@@ -4,8 +4,6 @@ import './styles/LineChart.css'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-
-
 class LineChart extends React.Component {
   render(){
   const cot = this.props.cots  
@@ -18,7 +16,7 @@ class LineChart extends React.Component {
     labels: this.props.labels,
     datasets: [
       {
-        label: 'Cotización',
+        label: 'Cotización del dólar en Argentina',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -48,7 +46,6 @@ class LineChart extends React.Component {
             <Line data={data} />
           </Grid>
         </Paper>
-        
       </Grid>      
       );
     }

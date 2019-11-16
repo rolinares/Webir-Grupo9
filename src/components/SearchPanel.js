@@ -1,9 +1,6 @@
-
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Search from '@material-ui/icons/Search';
-
-
 import Paper from '@material-ui/core/Paper';
 import React, { Component } from "react";
 import BestChoice from './BestChoice';
@@ -34,11 +31,9 @@ import "./styles/SearchPanel.css";
         })
         .then((recurso) => {
             var nameAux = this.state.name;  
-            nameAux = recurso.name === "Dolar Oficial"? "Le conviene viajar llevando Dólares" : "Le conviene viajar con pesos Argentinos";          
+            nameAux = recurso.name === "Dolar Oficial"? "Te conviene viajar llevando dólares" : "Te conviene viajar con pesos argentinos";
             this.setState({name: nameAux});           
         })
-        
-            
       }
 
     render() {
@@ -71,10 +66,8 @@ import "./styles/SearchPanel.css";
             </Grid>
             <BestChoice name={this.state.name}/>
             </Paper>
-        </Grid> 
-        
-      </div> 
-
+        </Grid>
+      </div>
       );
     }
   }

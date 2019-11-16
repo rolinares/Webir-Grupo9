@@ -3,10 +3,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
 import {NavLink} from  "react-router-dom";
-
-//const options = ["Principal", "Cotizaciones"];
 
 const ITEM_HEIGHT = 48;
 
@@ -47,10 +44,10 @@ export default function LongMenu() {
         }}
       >
         <MenuItem onTouchTap={() => {this.handleClose() }} >
-              <NavLink to="/Principal"> Principal </NavLink>
+              <NavLink to="/principal"> Principal </NavLink>
          </MenuItem>
         <MenuItem onTouchTap={() => {this.handleClose() }} >
-              <NavLink to="/historic"> Historico </NavLink>
+              <NavLink to="/historic"> Histórico </NavLink>
         </MenuItem>
       </Menu>
     </div>

@@ -3,9 +3,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-// import MenuIcon from "@material-ui/icons/Menu";
 import "./styles/NavBar.css";
-import icono from "../images/moneda.png";
+import SiteIcon from "../images/site_icon.png";
 import LongMenu from "./LongMenu";
 
 export default function ButtonAppBar() {
@@ -14,13 +13,13 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <div>
-            <img className="icono" src={icono} alt="inicio"/>
+            <img className="icono" src={SiteIcon} alt="inicio" />
           </div>
           <Typography variant="h6" className="title">
             ViajAR
           </Typography>
           <h4 className="menuButton">
-            Informate con que moneda viajar para que te convenga más!
+            Informate con qué moneda te conviene viajar desde Uruguay a Argentina
           </h4>
           <IconButton edge="start" color="inherit" aria-label="menu">
             {/* <MenuIcon /> */}

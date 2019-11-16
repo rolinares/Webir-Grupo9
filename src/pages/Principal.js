@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import SearchPanel from "../components/SearchPanel";
-import SearchPanel2 from "../components/SearchPanel2";
 import Boxes from "../components/Boxes";
 import LineChart from "../components/LineChart";
 import NavBar from "../components/NavBar";
-import SearchPanel3 from "../components/SearchPanel3";
+import { Helmet } from 'react-helmet'
+
+const TITLE = 'Principal - ViajAR'
 
 class Principal extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+            <title>{ TITLE }</title>
+        </Helmet>
         <NavBar />
         <Boxes />        
         <SearchPanel />
-       
       </div>
     );
   }

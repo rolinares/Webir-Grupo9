@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import CurrencyBox from "./CurrencyBox";
 import Grid from "@material-ui/core/Grid";
-import ARGFlag from "../images/ARGFlag.png";
-import URUFlag from "../images/URUFlag.png";
-import USAFlag from "../images/USAFlag.png";
+import argFlag from "../images/flag_arg.png";
+import uruFlag from "../images/flag_uru.png";
+import usaFlag from "../images/flag_usa.png";
 import "./styles/Boxes.css";
 
 class boxes extends Component {
@@ -14,15 +14,15 @@ class boxes extends Component {
         {
           id: 1,
           title: "Cotización Dólar USA - Peso Argentino",
-          img1: USAFlag,
-          img2: ARGFlag,
+          img1: usaFlag,
+          img2: argFlag,
           cot: 0
         },
         {
           id: 2,
           title: "Cotización Dólar USA - Peso Uruguayo",
-          img1: USAFlag,
-          img2: URUFlag,
+          img1: usaFlag,
+          img2: uruFlag,
           cot: 0
         }
       ]
@@ -43,10 +43,7 @@ class boxes extends Component {
         cotAux[1].cot = recurso[2].value;
         cotAux[0].cot = recurso[0].value;
         this.setState({cotizaciones: cotAux});
-       
     })
-    
-        
   }
 
   render() {
