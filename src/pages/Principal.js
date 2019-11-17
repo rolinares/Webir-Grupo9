@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SearchPanel from "../components/SearchPanel";
 import Boxes from "../components/Boxes";
-import LineChart from "../components/LineChart";
 import NavBar from "../components/NavBar";
 import { Helmet } from 'react-helmet'
 

@@ -21,6 +21,7 @@ class Historic extends Component {
         let date = newDate.getDate();
         let month = newDate.getMonth() + 1;
         let year = newDate.getFullYear();
+        console.log(month)
         let initDate = '01-' + month + '-' + year
         let endDate = date + '-' + month + '-'+year
         let url = 'https://localhost:5001/api/Quotations/range?codes=DolarArg&startTime=' + initDate + '&endTime=' + endDate
@@ -31,10 +32,10 @@ class Historic extends Component {
         .then((recurso) => {            
             var labelsAux = this.state.labels
             var cotsAux = this.state.cots
-            var a
+            var itemDate
             { recurso[0].map((item) => (
-                a = new Date(item.date),
-                labelsAux.push(a.getDate() + '-' + a.getMonth() + '-' + a.getFullYear()),
+                itemDate = new Date(item.date),
+                labelsAux.push(itemDate.getDate() + '-' + (itemDate.getMonth()+1) + '-' + itemDate.getFullYear()),
                 cotsAux.push(item.value)
             ))}
             this.setState({
